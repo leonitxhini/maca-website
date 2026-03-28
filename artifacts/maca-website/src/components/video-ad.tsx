@@ -33,15 +33,14 @@ export default function VideoAd() {
         </div>
 
         {/* Video card */}
-        <div className="relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer bg-green-950">
+        <div className="relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer bg-green-950 mx-auto aspect-[9/16] max-w-sm">
           <video
             ref={videoRef}
             src="/maca-ad.mp4"
-            className="w-full max-h-[75vh] object-cover"
+            className="w-full h-full object-cover"
             loop
             muted
             playsInline
-            poster="/three-cups.jpg"
             onClick={togglePlay}
           />
 
