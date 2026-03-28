@@ -84,28 +84,28 @@ export default function Menu() {
     active === "All" ? menuItems : menuItems.filter((m) => m.category === active);
 
   return (
-    <section id="menu" className="py-24 px-4 bg-green-50/50">
+    <section id="menu" className="py-16 px-4 bg-green-50/50">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <span className="text-green-600 font-semibold text-sm uppercase tracking-widest">
             What We Serve
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-green-900 mt-3 mb-5">
+          <h2 className="text-4xl md:text-5xl font-bold text-green-900 mt-3 mb-4">
             Our Menu
           </h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+          <p className="text-green-900/60 max-w-md mx-auto">
             Every drink crafted with ceremonial-grade matcha and the freshest ingredients.
           </p>
         </div>
 
         {/* Category Filters */}
-        <div className="flex flex-wrap gap-2 justify-center mb-10">
+        <div className="flex flex-wrap gap-2 justify-center mb-8">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActive(cat)}
-              className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
+              className={`min-h-[44px] px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
                 active === cat
                   ? "matcha-gradient text-white shadow-md scale-105"
                   : "bg-white text-green-700 border border-green-200 hover:border-green-400 hover:bg-green-50"
@@ -117,7 +117,7 @@ export default function Menu() {
         </div>
 
         {/* Menu Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {filtered.map((item, i) => (
             <div
               key={i}
@@ -161,7 +161,7 @@ export default function Menu() {
         </div>
 
         {/* Coming Soon Note */}
-        <p className="text-center text-muted-foreground mt-10 text-sm">
+        <p className="text-center text-green-900/55 mt-8 text-sm">
           Menu items and seasonal specials may vary.{" "}
           <span className="text-green-600 font-medium">More exciting drinks coming soon!</span>
         </p>

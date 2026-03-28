@@ -35,23 +35,23 @@ const galleryItems = [
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="py-24 px-4 bg-green-50/50">
+    <section id="gallery" className="py-16 px-4 bg-green-50/50">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <span className="text-green-600 font-semibold text-sm uppercase tracking-widest">
             Our World
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-green-900 mt-3 mb-5">
+          <h2 className="text-4xl md:text-5xl font-bold text-green-900 mt-3 mb-4">
             A Feast for the Eyes
           </h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+          <p className="text-green-900/60 max-w-md mx-auto">
             Every Maça drink is crafted to be as beautiful as it is delicious.
           </p>
         </div>
 
         {/* Masonry-style Gallery Grid */}
-        <div className="grid grid-cols-3 md:grid-cols-4 auto-rows-48 gap-3 md:gap-4 mb-10" style={{ gridAutoRows: "180px" }}>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4 mb-8" style={{ gridAutoRows: "160px" }}>
           {galleryItems.map((item, i) => (
             <div
               key={i}
@@ -76,12 +76,12 @@ export default function Gallery() {
             href="https://www.instagram.com/maca_ks"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white font-semibold text-base shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
+            className="inline-flex items-center gap-3 min-h-[44px] px-7 py-3 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white font-semibold text-base shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
           >
             <Instagram size={20} />
             Follow us on Instagram @maca_ks
           </a>
-          <p className="mt-4 text-muted-foreground text-sm">
+          <p className="mt-3 text-green-900/55 text-sm">
             167 followers and growing — join our community!
           </p>
         </div>

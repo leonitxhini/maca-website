@@ -8,17 +8,17 @@ export default function Location() {
   ];
 
   return (
-    <section id="location" className="py-24 px-4 bg-background">
+    <section id="location" className="py-16 px-4 bg-background">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <span className="text-green-600 font-semibold text-sm uppercase tracking-widest">
             Come Visit
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-green-900 mt-3 mb-5">
+          <h2 className="text-4xl md:text-5xl font-bold text-green-900 mt-3 mb-4">
             Find Maça
           </h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+          <p className="text-green-900/60 max-w-md mx-auto">
             We're right in the heart of Prishtina — inside the mall's Food Court, 
             ready to serve you something green and gorgeous.
           </p>
@@ -35,7 +35,7 @@ export default function Location() {
                 </div>
                 <div>
                   <h3 className="font-bold text-green-900 text-lg mb-1">Our Location</h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-green-900/60 leading-relaxed">
                     Prishtina Mall — Food Court<br />
                     Pristina, Kosovo 🇽🇰
                   </p>
@@ -62,7 +62,7 @@ export default function Location() {
                   <div className="space-y-2">
                     {hours.map((h, i) => (
                       <div key={i} className="flex justify-between items-center text-sm">
-                        <span className="text-muted-foreground">{h.day}</span>
+                        <span className="text-green-900/60">{h.day}</span>
                         <span className="font-semibold text-green-800">{h.time}</span>
                       </div>
                     ))}

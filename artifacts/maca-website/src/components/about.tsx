@@ -20,33 +20,33 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-24 px-4 bg-background">
+    <section id="about" className="py-16 px-4 bg-background">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <span className="text-green-600 font-semibold text-sm uppercase tracking-widest">Our Story</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-green-900 mt-3 mb-5">
+          <h2 className="text-4xl md:text-5xl font-bold text-green-900 mt-3 mb-4">
             Meet Maça
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-green-900/60 max-w-xl mx-auto leading-relaxed">
             Born from a love of matcha and a passion for Prishtina's vibrant café culture, 
             Maça is where ancient Japanese tea traditions meet modern Kosovo energy.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+        <div className="grid md:grid-cols-2 gap-10 items-center mb-14">
           {/* Text Side */}
-          <div className="space-y-6">
-            <h3 className="text-3xl font-bold text-green-800">
+          <div className="space-y-5">
+            <h3 className="text-2xl md:text-3xl font-bold text-green-800">
               Kosovo loves coffee...<br />
               <span className="gradient-text">but have you tried matcha?</span>
             </h3>
-            <p className="text-muted-foreground leading-relaxed text-lg">
+            <p className="text-green-900/60 leading-relaxed max-w-prose">
               Maça is Kosovo's newest matcha destination, bringing premium quality and creative flavors 
               to the heart of Prishtina Mall. Whether you're discovering matcha for the first time 
               or you're a seasoned enthusiast, we have something special for you.
             </p>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-green-900/60 leading-relaxed max-w-prose">
               From classic ceremonial matcha to playful blueberry and vanilla variations, 
               every sip is designed to delight, energize, and refresh.
             </p>
@@ -82,17 +82,17 @@ export default function About() {
         </div>
 
         {/* Values Grid */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-3 gap-5">
           {values.map((v, i) => (
             <div
               key={i}
-              className="p-6 rounded-2xl bg-card border border-card-border shadow-sm card-hover group"
+              className="p-5 rounded-2xl bg-card border border-card-border shadow-sm card-hover group"
             >
-              <div className="w-12 h-12 rounded-xl bg-green-50 border border-green-100 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+              <div className="w-11 h-11 rounded-xl bg-green-50 border border-green-100 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                 {v.icon}
               </div>
-              <h4 className="text-lg font-bold text-green-900 mb-2">{v.title}</h4>
-              <p className="text-muted-foreground text-sm leading-relaxed">{v.desc}</p>
+              <h4 className="text-base font-bold text-green-900 mb-1.5">{v.title}</h4>
+              <p className="text-green-900/55 text-sm leading-relaxed">{v.desc}</p>
             </div>
           ))}
         </div>
