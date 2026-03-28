@@ -88,28 +88,19 @@ export default function Location() {
             </div>
           </div>
 
-          {/* Real Prishtina Mall Photo */}
-          <div className="relative rounded-3xl overflow-hidden shadow-xl min-h-80">
-            <img
-              src="/prishtina-mall.jpg"
-              alt="Prishtina Mall — home of Maça"
-              className="w-full h-full object-cover object-center"
+          {/* Google Maps Embed */}
+          <div className="rounded-3xl overflow-hidden shadow-xl min-h-80 bg-card border border-card-border">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2934.6!2d21.1655!3d42.6529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13549f3a3f84d855%3A0x95b2a8b5c0cf7af9!2sPrishtina%20Mall%20Food%20Court%2C%20Pristina%2C%20Kosovo!5e0!3m2!1sen!2s!4v1711000000000!5m2!1sen!2s"
+              width="100%"
+              height="100%"
+              style={{ border: 0, minHeight: "320px" }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Prishtina Mall — Food Court, Pristina, Kosovo"
+              className="w-full h-full"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-green-900/80 via-green-900/20 to-transparent" />
-
-            {/* Overlay Info */}
-            <div className="absolute top-4 right-4 bg-white/90 backdrop-blur rounded-xl px-3 py-2 shadow-md border border-green-100">
-              <p className="text-xs font-bold text-green-800">🇽🇰 Pristina, Kosovo</p>
-            </div>
-
-            <div className="absolute bottom-0 left-0 right-0 p-6">
-              <div className="matcha-gradient rounded-2xl px-5 py-4 shadow-xl border border-white/10">
-                <p className="text-white/80 text-xs font-semibold uppercase tracking-wider mb-1">Grand Opening</p>
-                <p className="text-white font-black text-xl">April 8th, 2026</p>
-                <p className="text-white/70 text-sm mt-1">📍 Prishtina Mall · Food Court</p>
-                <p className="text-green-300 text-sm font-medium mt-1">Ready to meet us for Maça? 🍵</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
