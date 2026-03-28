@@ -2,33 +2,28 @@ import { Instagram } from "lucide-react";
 
 const galleryItems = [
   {
-    src: "/three-cups.jpg",
-    label: "Kosovo Loves Maça",
+    src: "/matcha-latte-art.png",
+    label: "Crafted with Care",
     span: "col-span-2 row-span-2",
   },
   {
-    src: "/vanilla-matcha.jpg",
-    label: "Vanilla Matcha",
+    src: "/iced-matcha-swirl.png",
+    label: "Iced & Refreshing",
     span: "",
   },
   {
-    src: "/what-is-matcha.jpg",
-    label: "What is Matcha?",
+    src: "/matcha-powder-pour.png",
+    label: "Pure Ceremonial Grade",
     span: "",
   },
   {
-    src: "/matcha-green.jpg",
-    label: "Grown in the Shade",
-    span: "",
+    src: "/cafe-vibes.png",
+    label: "Your Perfect Corner",
+    span: "col-span-2",
   },
   {
-    src: "/matcha-energy.jpg",
-    label: "Calm Focus, No Jitters",
-    span: "",
-  },
-  {
-    src: "/prishtina-mall.jpg",
-    label: "Prishtina Mall — Our Home",
+    src: "/matcha-trio.png",
+    label: "Something for Everyone",
     span: "col-span-2",
   },
 ];
