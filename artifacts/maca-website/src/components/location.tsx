@@ -91,7 +91,7 @@ export default function Location() {
           {/* Google Maps Embed */}
           <div className="rounded-3xl overflow-hidden shadow-xl min-h-80 bg-card border border-card-border">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2934.6!2d21.1655!3d42.6529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13549f3a3f84d855%3A0x95b2a8b5c0cf7af9!2sPrishtina%20Mall%20Food%20Court%2C%20Pristina%2C%20Kosovo!5e0!3m2!1sen!2s!4v1711000000000!5m2!1sen!2s"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2934.6!2d21.1655!3d42.6529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13549f3a3f84d855%3A0x95b2a8b5c0cf7af9!2sPrishtina%20Mall!5e0!3m2!1sen!2s!4v1711000000000!5m2!1sen!2s"
               width="100%"
               height="100%"
               style={{ border: 0, minHeight: "320px" }}
