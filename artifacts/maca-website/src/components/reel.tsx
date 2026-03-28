@@ -18,17 +18,17 @@ export default function Reel() {
         </div>
 
         <div className="flex flex-col lg:flex-row gap-10 items-center justify-center">
-          {/* Instagram Reel Embed */}
+          {/* Instagram Reel Embed — how matcha is made */}
           <div className="w-full max-w-sm shrink-0">
             <div className="rounded-3xl overflow-hidden shadow-2xl border border-green-100">
               <iframe
-                src="https://www.instagram.com/reel/DWO7qfvjA1a/embed/"
+                src="https://www.instagram.com/reel/DV9FqOJDPUx/embed/"
                 className="w-full"
                 style={{ height: "600px", border: "none" }}
                 allowFullScreen
                 scrolling="no"
                 loading="lazy"
-                title="Maça Instagram Reel"
+                title="How Maça is Made — Instagram Reel"
               />
             </div>
           </div>
@@ -41,16 +41,17 @@ export default function Reel() {
             </div>
 
             <h3 className="text-3xl font-bold text-green-900 mb-4">
-              Kosovo loves coffee...<br />
-              <span className="gradient-text">but have you tried Maça?</span>
+              Watch how Maça<br />
+              <span className="gradient-text">comes to life.</span>
             </h3>
             <p className="text-muted-foreground leading-relaxed mb-6 text-lg">
-              See what's coming to Prishtina Mall's Food Court. Pure ceremonial matcha, 
-              creative flavours, and vibes that hit different. 
+              Every cup starts with ceremonial-grade matcha powder, whisked with precision 
+              and crafted with heart. This is how we make it — and soon, 
+              you can taste it for yourself.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Opening <strong className="text-green-700">April 8th, 2026</strong> — 
-              follow us so you don't miss a thing.
+              Opening <strong className="text-green-700">April 8th, 2026</strong> at 
+              Prishtina Mall · Food Court — follow us so you don't miss a thing.
             </p>
 
             <a

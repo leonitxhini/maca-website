@@ -1,5 +1,6 @@
 import Navbar from "@/components/navbar";
 import Hero from "@/components/hero";
+import VideoAd from "@/components/video-ad";
 import About from "@/components/about";
 import Menu from "@/components/menu";
 import WhyMatcha from "@/components/why-matcha";
@@ -13,6 +14,7 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       <Navbar />
       <Hero />
+      <VideoAd />
       <About />
       <Menu />
       <WhyMatcha />
