@@ -91,7 +91,6 @@ export default function WhyMatcha() {
               <div className="absolute inset-0 bg-gradient-to-t from-green-900/80 via-green-900/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
                 <h4 className="font-bold text-lg mb-1 drop-shadow">{card.title}</h4>
-                <p className="text-white/80 text-sm leading-snug">{card.caption}</p>
               </div>
             </div>
           ))}
