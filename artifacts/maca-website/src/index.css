@@ -230,6 +230,71 @@ html {
   100% { background-position: 200% center; }
 }
 
+@keyframes logoSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes logoPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.06); opacity: 0.85; }
+}
+
+.hero-logo-spin {
+  animation: logoSpin 80s linear infinite;
+  will-change: transform;
+}
+
+.hero-logo-pulse {
+  animation: logoPulse 8s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-logo-spin { animation: none; }
+  .hero-logo-pulse { animation: none; }
+}
+
+@keyframes particleDrift {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-55vh) translateX(20px) scale(0.8);
+  }
+  85% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-110vh) translateX(-10px) scale(0.4);
+    opacity: 0;
+  }
+}
+
+.hero-particle {
+  animation: particleDrift linear infinite;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-particle {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+/* Grain texture overlay using SVG filter */
+.hero-grain {
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  mix-blend-mode: overlay;
+}
+
 .animate-float {
   animation: float 4s ease-in-out infinite;
 }
