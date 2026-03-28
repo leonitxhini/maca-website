@@ -1,4 +1,4 @@
-import { ArrowDown, MapPin, Sparkles } from "lucide-react";
+import { ArrowDown, MapPin } from "lucide-react";
 
 const leafParticles = [
   { size: 7, left: "5%", delay: "0s", duration: "14s", opacity: 0.45 },
@@ -97,13 +97,6 @@ export default function Hero() {
 
       {/* Main content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/20 text-white text-sm px-4 py-2 rounded-full mb-6">
-          <Sparkles size={14} className="text-yellow-300" />
-          <span>Now at Prishtina Mall · Food Court</span>
-          <Sparkles size={14} className="text-yellow-300" />
-        </div>
-
         {/* Main brand name — matches the MAÇA cup branding */}
         <h1
           className="text-[9rem] md:text-[13rem] text-white mb-2 leading-none drop-shadow-lg"
