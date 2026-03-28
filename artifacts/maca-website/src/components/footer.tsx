@@ -93,7 +93,15 @@ export default function Footer() {
             © 2026 Maça. All rights reserved.
           </p>
           <p className="text-white/40 text-xs flex items-center gap-1">
-            Made with <Heart size={12} className="text-rose-400 fill-rose-400" /> in Prishtina, Kosovo
+            Made with <Heart size={12} className="text-rose-400 fill-rose-400" /> in Prishtina, Kosovo · by{" "}
+            <a
+              href="https://lxclouds.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/50 hover:text-white transition-colors underline underline-offset-2"
+            >
+              lxclouds.com
+            </a>
           </p>
         </div>
       </div>
