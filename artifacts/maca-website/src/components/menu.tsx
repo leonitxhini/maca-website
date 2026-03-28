@@ -8,10 +8,7 @@ const menuItems = [
     name: "Ceremonial Matcha",
     desc: "Traditional Japanese matcha, whisked to perfection with hot water",
     price: "€3.50",
-    emoji: "🍵",
-    overlay: "bg-emerald-500/20",
-    label: "Original",
-    labelColor: "bg-emerald-100 text-emerald-800",
+    image: "/menu/ceremonial-matcha.png",
     badge: "Bestseller",
     badgeColor: "bg-amber-100 text-amber-700",
   },
@@ -20,10 +17,7 @@ const menuItems = [
     name: "Matcha Latte",
     desc: "Premium matcha with creamy steamed milk — the crowd favourite",
     price: "€4.00",
-    emoji: "☕",
-    overlay: "bg-green-300/25",
-    label: "Creamy",
-    labelColor: "bg-green-100 text-green-800",
+    image: "/menu/matcha-latte.png",
     badge: "Popular",
     badgeColor: "bg-green-100 text-green-700",
   },
@@ -32,10 +26,7 @@ const menuItems = [
     name: "Vanilla Matcha",
     desc: "Smooth ceremonial matcha with silky vanilla and oat milk",
     price: "€4.50",
-    emoji: "🤍",
-    overlay: "bg-amber-100/40",
-    label: "Vanilla",
-    labelColor: "bg-amber-50 text-amber-800",
+    image: "/menu/vanilla-matcha.png",
     badge: "Signature",
     badgeColor: "bg-purple-100 text-purple-700",
   },
@@ -44,10 +35,7 @@ const menuItems = [
     name: "Blueberry Matcha",
     desc: "Vibrant blueberry puree layered with fresh iced matcha",
     price: "€4.50",
-    emoji: "🫐",
-    overlay: "bg-violet-400/30",
-    label: "Blueberry",
-    labelColor: "bg-violet-100 text-violet-800",
+    image: "/menu/blueberry-matcha.png",
     badge: "Signature",
     badgeColor: "bg-purple-100 text-purple-700",
   },
@@ -56,10 +44,7 @@ const menuItems = [
     name: "Iced Matcha Latte",
     desc: "Chilled matcha over ice, topped with cold milk — refreshing perfection",
     price: "€4.00",
-    emoji: "🧊",
-    overlay: "bg-cyan-300/25",
-    label: "Iced",
-    labelColor: "bg-cyan-100 text-cyan-800",
+    image: "/menu/iced-matcha-latte.png",
     badge: null,
     badgeColor: "",
   },
@@ -68,10 +53,7 @@ const menuItems = [
     name: "Matcha Lemonade",
     desc: "Zesty lemon meets earthy matcha over crushed ice",
     price: "€4.50",
-    emoji: "🍋",
-    overlay: "bg-yellow-300/30",
-    label: "Lemon",
-    labelColor: "bg-yellow-100 text-yellow-800",
+    image: "/menu/matcha-lemonade.png",
     badge: "New",
     badgeColor: "bg-yellow-100 text-yellow-700",
   },
@@ -80,10 +62,7 @@ const menuItems = [
     name: "Spring Bloom Special",
     desc: "Seasonal matcha blend with cherry blossom syrup and rose",
     price: "€5.00",
-    emoji: "🌸",
-    overlay: "bg-pink-300/30",
-    label: "Cherry Blossom",
-    labelColor: "bg-pink-100 text-pink-800",
+    image: "/menu/spring-bloom.png",
     badge: "Limited",
     badgeColor: "bg-rose-100 text-rose-700",
   },
@@ -92,10 +71,7 @@ const menuItems = [
     name: "Mango Matcha",
     desc: "Tropical mango swirled into our signature matcha base",
     price: "€5.00",
-    emoji: "🥭",
-    overlay: "bg-orange-300/30",
-    label: "Mango",
-    labelColor: "bg-orange-100 text-orange-800",
+    image: "/menu/mango-matcha.png",
     badge: "Limited",
     badgeColor: "bg-orange-100 text-orange-700",
   },
@@ -145,23 +121,15 @@ export default function Menu() {
           {filtered.map((item, i) => (
             <div
               key={i}
-              className="bg-white rounded-2xl border border-green-100 shadow-sm card-hover flex flex-col overflow-hidden"
+              className="bg-white rounded-2xl border border-green-100 shadow-sm card-hover flex flex-col overflow-hidden group"
             >
-              {/* Cup image with flavour overlay */}
-              <div className="relative w-full aspect-square overflow-hidden bg-gray-50">
+              {/* Cup Image */}
+              <div className="relative w-full aspect-square overflow-hidden bg-gradient-to-br from-green-50 to-emerald-50">
                 <img
-                  src="/maca-cup.png"
+                  src={item.image}
                   alt={item.name}
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                 />
-                {/* Colour tint for this flavour */}
-                <div className={`absolute inset-0 ${item.overlay}`} />
-                {/* Flavour label chip */}
-                <div className="absolute top-3 left-3">
-                  <span className={`text-xs font-bold px-2.5 py-1 rounded-full backdrop-blur-sm ${item.labelColor}`}>
-                    {item.emoji} {item.label}
-                  </span>
-                </div>
               </div>
 
               <div className="p-5 flex flex-col flex-1">
