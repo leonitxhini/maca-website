@@ -32,12 +32,11 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-18 py-4">
           {/* Logo */}
           <a href="#home" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-full flex items-center justify-center matcha-gradient shadow-md group-hover:scale-105 transition-transform">
-              <svg viewBox="0 0 24 24" className="w-6 h-6 text-white fill-current">
-                <path d="M12 2C7.5 2 4 5.8 4 10.5c0 3.3 1.8 6.2 4.5 7.8V20h7v-1.7C18.2 16.7 20 13.8 20 10.5 20 5.8 16.5 2 12 2z" />
-                <path d="M9 20h6v2H9z" fillOpacity="0.6" />
-              </svg>
-            </div>
+            <img
+              src="/logo.png"
+              alt="Maça Logo"
+              className="w-10 h-10 rounded-full object-cover shadow-md group-hover:scale-105 transition-transform"
+            />
             <span className={`text-2xl font-bold tracking-tight transition-colors ${scrolled ? "text-green-800" : "text-white"}`}>
               Maça
             </span>
@@ -49,12 +48,12 @@ export default function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                className={`text-sm font-medium transition-all hover:text-green-500 relative group ${
+                className={`text-sm font-medium transition-all hover:text-green-400 relative group ${
                   scrolled ? "text-green-900" : "text-white/90"
                 }`}
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-500 transition-all group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-400 transition-all group-hover:w-full" />
               </a>
             ))}
           </div>

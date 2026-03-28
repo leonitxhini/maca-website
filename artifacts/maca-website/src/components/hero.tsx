@@ -6,10 +6,17 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Animated Background */}
-      <div className="absolute inset-0 matcha-gradient" />
-      
-      {/* Organic blob shapes */}
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img
+          src="/three-cups.jpg"
+          alt="Maça matcha drinks"
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-green-900/80 via-green-800/70 to-green-900/85" />
+      </div>
+
+      {/* Organic glow overlays */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
           className="absolute -top-20 -right-20 w-96 h-96 rounded-full opacity-20"
@@ -19,39 +26,28 @@ export default function Hero() {
           className="absolute -bottom-20 -left-20 w-96 h-96 rounded-full opacity-15"
           style={{ background: "radial-gradient(circle, #b7e4c7 0%, transparent 70%)" }}
         />
-        <div
-          className="absolute top-1/2 left-1/3 w-64 h-64 rounded-full opacity-10"
-          style={{ background: "radial-gradient(circle, #d8f3dc 0%, transparent 70%)" }}
-        />
-
-        {/* Floating leaves */}
-        {[...Array(8)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute text-white/10 text-5xl animate-float"
-            style={{
-              top: `${10 + i * 12}%`,
-              left: `${5 + i * 12}%`,
-              animationDelay: `${i * 0.5}s`,
-              animationDuration: `${3 + i * 0.3}s`,
-            }}
-          >
-            🍃
-          </div>
-        ))}
       </div>
 
       {/* Main content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+        {/* Logo */}
+        <div className="flex justify-center mb-6">
+          <img
+            src="/logo.png"
+            alt="Maça Logo"
+            className="w-20 h-20 rounded-full object-cover shadow-2xl border-4 border-white/20 animate-float"
+          />
+        </div>
+
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/20 text-white text-sm px-4 py-2 rounded-full mb-8">
+        <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/20 text-white text-sm px-4 py-2 rounded-full mb-6">
           <Sparkles size={14} className="text-yellow-300" />
-          <span>Now Open at Prishtina Mall</span>
+          <span>Now at Prishtina Mall · Food Court</span>
           <Sparkles size={14} className="text-yellow-300" />
         </div>
 
         {/* Main Heading */}
-        <h1 className="text-6xl md:text-8xl font-black text-white mb-6 leading-none tracking-tight">
+        <h1 className="text-6xl md:text-8xl font-black text-white mb-4 leading-none tracking-tight drop-shadow-lg">
           Maça
         </h1>
         <p className="text-2xl md:text-3xl text-white/90 font-light mb-4">
@@ -80,7 +76,7 @@ export default function Hero() {
 
         {/* Opening Date */}
         <div className="mt-12 inline-flex items-center gap-2 text-white/60 text-sm">
-          <span>Opening Day:</span>
+          <span>Grand Opening:</span>
           <span className="text-white font-semibold">April 8th, 2026</span>
         </div>
       </div>

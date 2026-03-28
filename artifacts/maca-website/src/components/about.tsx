@@ -38,7 +38,8 @@ export default function About() {
           {/* Text Side */}
           <div className="space-y-6">
             <h3 className="text-3xl font-bold text-green-800">
-              Kosovo loves coffee... but have you tried matcha?
+              Kosovo loves coffee...<br />
+              <span className="gradient-text">but have you tried matcha?</span>
             </h3>
             <p className="text-muted-foreground leading-relaxed text-lg">
               Maça is Kosovo's newest matcha destination, bringing premium quality and creative flavors 
@@ -50,7 +51,7 @@ export default function About() {
               every sip is designed to delight, energize, and refresh.
             </p>
             <div className="flex flex-wrap gap-3 pt-2">
-              {["Matcha Lattes", "Seasonal Specials", "Iced Drinks", "Blended Bowls"].map((tag) => (
+              {["Matcha Lattes", "Seasonal Specials", "Iced Drinks", "Signature Blends"].map((tag) => (
                 <span
                   key={tag}
                   className="px-4 py-1.5 rounded-full bg-green-100 text-green-700 text-sm font-medium border border-green-200"
@@ -61,24 +62,20 @@ export default function About() {
             </div>
           </div>
 
-          {/* Visual Side */}
+          {/* Real photo */}
           <div className="relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-square max-w-md mx-auto">
-              {/* Decorative matcha bowl visual */}
-              <div className="absolute inset-0 matcha-gradient opacity-90" />
-              <div className="relative z-10 h-full flex flex-col items-center justify-center gap-4 p-8">
-                <div className="text-8xl animate-float">🍵</div>
-                <p className="text-white text-center text-xl font-semibold">
-                  Where every sip tells a story
-                </p>
-                <div className="flex gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-300 fill-yellow-300" />
-                  ))}
-                </div>
+              <img
+                src="/vanilla-matcha.jpg"
+                alt="Maça Vanilla Matcha drink"
+                className="w-full h-full object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-green-900/50 via-transparent to-transparent" />
+              <div className="absolute bottom-5 left-5 right-5 text-white">
+                <p className="font-bold text-lg drop-shadow">Vanilla Matcha</p>
+                <p className="text-white/80 text-sm">One of our signature blends</p>
               </div>
             </div>
-            {/* Decorative dot */}
             <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-full bg-green-100 -z-10" />
             <div className="absolute -top-6 -left-6 w-20 h-20 rounded-full bg-green-200 -z-10" />
           </div>

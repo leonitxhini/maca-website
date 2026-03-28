@@ -1,15 +1,36 @@
 import { Instagram } from "lucide-react";
 
 const galleryItems = [
-  { emoji: "🍵", label: "Classic Ceremonial Matcha", bg: "from-green-200 to-emerald-300" },
-  { emoji: "🤍", label: "Vanilla Matcha Latte", bg: "from-purple-100 to-violet-200" },
-  { emoji: "🫐", label: "Blueberry Matcha", bg: "from-blue-200 to-indigo-300" },
-  { emoji: "🌿", label: "Matcha Fields", bg: "from-green-300 to-teal-400" },
-  { emoji: "🍋", label: "Matcha Lemonade", bg: "from-yellow-200 to-lime-300" },
-  { emoji: "🌸", label: "Seasonal Bloom", bg: "from-pink-200 to-rose-300" },
-  { emoji: "🧊", label: "Iced Matcha", bg: "from-cyan-200 to-blue-300" },
-  { emoji: "☕", label: "Matcha Latte", bg: "from-amber-100 to-orange-200" },
-  { emoji: "🥭", label: "Mango Matcha", bg: "from-orange-200 to-yellow-300" },
+  {
+    src: "/three-cups.jpg",
+    label: "Kosovo Loves Maça",
+    span: "col-span-2 row-span-2",
+  },
+  {
+    src: "/vanilla-matcha.jpg",
+    label: "Vanilla Matcha",
+    span: "",
+  },
+  {
+    src: "/what-is-matcha.jpg",
+    label: "What is Matcha?",
+    span: "",
+  },
+  {
+    src: "/matcha-green.jpg",
+    label: "Grown in the Shade",
+    span: "",
+  },
+  {
+    src: "/matcha-energy.jpg",
+    label: "Calm Focus, No Jitters",
+    span: "",
+  },
+  {
+    src: "/prishtina-mall.jpg",
+    label: "Prishtina Mall — Our Home",
+    span: "col-span-2",
+  },
 ];
 
 export default function Gallery() {
@@ -29,22 +50,22 @@ export default function Gallery() {
           </p>
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-3 gap-3 md:gap-4 mb-10">
+        {/* Masonry-style Gallery Grid */}
+        <div className="grid grid-cols-3 md:grid-cols-4 auto-rows-48 gap-3 md:gap-4 mb-10" style={{ gridAutoRows: "180px" }}>
           {galleryItems.map((item, i) => (
             <div
               key={i}
-              className={`relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br ${item.bg} card-hover cursor-pointer group`}
+              className={`relative rounded-2xl overflow-hidden card-hover cursor-pointer group ${item.span}`}
             >
-              <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <span className="text-4xl md:text-6xl mb-2 group-hover:scale-110 transition-transform duration-300">
-                  {item.emoji}
-                </span>
-                <span className="hidden md:block text-xs font-medium text-green-900/70 text-center px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                  {item.label}
-                </span>
+              <img
+                src={item.src}
+                alt={item.label}
+                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-green-900/0 group-hover:bg-green-900/40 transition-colors duration-300 rounded-2xl" />
+              <div className="absolute bottom-3 left-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span className="text-white text-sm font-semibold drop-shadow">{item.label}</span>
               </div>
-              <div className="absolute inset-0 bg-green-900/0 group-hover:bg-green-900/10 transition-colors duration-300 rounded-2xl" />
             </div>
           ))}
         </div>

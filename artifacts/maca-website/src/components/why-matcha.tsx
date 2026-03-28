@@ -27,6 +27,24 @@ const benefits = [
   },
 ];
 
+const infoCards = [
+  {
+    img: "/what-is-matcha.jpg",
+    title: "What is Matcha?",
+    caption: "Finely ground whole green tea leaves — you drink the entire leaf.",
+  },
+  {
+    img: "/matcha-green.jpg",
+    title: "Why is Matcha so Green?",
+    caption: "Shade-grown to boost chlorophyll, antioxidants & amino acids.",
+  },
+  {
+    img: "/matcha-energy.jpg",
+    title: "Different Kind of Energy",
+    caption: "Caffeine + L-Theanine = calm focus, smooth energy, no jitters.",
+  },
+];
+
 export default function WhyMatcha() {
   return (
     <section id="why-matcha" className="py-24 px-4 bg-background">
@@ -61,14 +79,30 @@ export default function WhyMatcha() {
           ))}
         </div>
 
+        {/* Matcha Info Cards with real photos */}
+        <div className="grid md:grid-cols-3 gap-6 mb-16">
+          {infoCards.map((card, i) => (
+            <div key={i} className="relative rounded-2xl overflow-hidden shadow-lg card-hover group aspect-square">
+              <img
+                src={card.img}
+                alt={card.title}
+                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-green-900/80 via-green-900/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
+                <h4 className="font-bold text-lg mb-1 drop-shadow">{card.title}</h4>
+                <p className="text-white/80 text-sm leading-snug">{card.caption}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
         {/* Big CTA Banner */}
         <div className="relative rounded-3xl overflow-hidden matcha-gradient p-10 md:p-14 text-center shadow-2xl">
-          {/* Background decoration */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute -top-8 -right-8 w-48 h-48 rounded-full bg-white/10" />
             <div className="absolute -bottom-8 -left-8 w-48 h-48 rounded-full bg-white/10" />
           </div>
-
           <div className="relative z-10">
             <div className="text-5xl mb-4">🌿</div>
             <h3 className="text-3xl md:text-4xl font-black text-white mb-4">
