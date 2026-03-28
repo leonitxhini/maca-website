@@ -19,12 +19,12 @@ export default function Reel() {
 
         <div className="flex flex-col lg:flex-row gap-8 items-center justify-center">
           {/* Instagram Reel Embed */}
-          <div className="w-full max-w-xs shrink-0">
+          <div className="w-full max-w-sm shrink-0">
             <div className="rounded-3xl overflow-hidden shadow-2xl border border-green-100">
               <iframe
                 src="https://www.instagram.com/reel/DV9FqOJDPUx/embed/"
                 className="w-full"
-                style={{ height: "480px", border: "none" }}
+                style={{ height: "620px", border: "none" }}
                 allowFullScreen
                 scrolling="no"
                 loading="lazy"
