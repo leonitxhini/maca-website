@@ -1,5 +1,14 @@
 import { useState } from "react";
 
+import ceremonialMatcha from "../assets/menu/ceremonial-matcha.png";
+import matchaLatte from "../assets/menu/matcha-latte.png";
+import vanillaMatcha from "../assets/menu/vanilla-matcha.png";
+import blueberryMatcha from "../assets/menu/blueberry-matcha.png";
+import icedMatchaLatte from "../assets/menu/iced-matcha-latte.png";
+import matchaLemonade from "../assets/menu/matcha-lemonade.png";
+import springBloomSpecial from "../assets/menu/spring-bloom-special.png";
+import mangoMatcha from "../assets/menu/mango-matcha.png";
+
 const categories = ["All", "Classic", "Signature", "Iced", "Seasonal"];
 
 const menuItems = [
@@ -9,6 +18,7 @@ const menuItems = [
     desc: "Traditional Japanese matcha, whisked to perfection with hot water",
     price: "€3.50",
     emoji: "🍵",
+    image: ceremonialMatcha,
     badge: "Bestseller",
     badgeColor: "bg-amber-100 text-amber-700",
   },
@@ -18,6 +28,7 @@ const menuItems = [
     desc: "Premium matcha with creamy steamed milk — the crowd favourite",
     price: "€4.00",
     emoji: "☕",
+    image: matchaLatte,
     badge: "Popular",
     badgeColor: "bg-green-100 text-green-700",
   },
@@ -27,6 +38,7 @@ const menuItems = [
     desc: "Smooth ceremonial matcha with silky vanilla and oat milk",
     price: "€4.50",
     emoji: "🤍",
+    image: vanillaMatcha,
     badge: "Signature",
     badgeColor: "bg-purple-100 text-purple-700",
   },
@@ -36,6 +48,7 @@ const menuItems = [
     desc: "Vibrant blueberry puree layered with fresh iced matcha",
     price: "€4.50",
     emoji: "🫐",
+    image: blueberryMatcha,
     badge: "Signature",
     badgeColor: "bg-purple-100 text-purple-700",
   },
@@ -45,6 +58,7 @@ const menuItems = [
     desc: "Chilled matcha over ice, topped with cold milk — refreshing perfection",
     price: "€4.00",
     emoji: "🧊",
+    image: icedMatchaLatte,
     badge: null,
     badgeColor: "",
   },
@@ -54,6 +68,7 @@ const menuItems = [
     desc: "Zesty lemon meets earthy matcha over crushed ice",
     price: "€4.50",
     emoji: "🍋",
+    image: matchaLemonade,
     badge: "New",
     badgeColor: "bg-yellow-100 text-yellow-700",
   },
@@ -63,6 +78,7 @@ const menuItems = [
     desc: "Seasonal matcha blend with cherry blossom syrup and rose",
     price: "€5.00",
     emoji: "🌸",
+    image: springBloomSpecial,
     badge: "Limited",
     badgeColor: "bg-rose-100 text-rose-700",
   },
@@ -72,6 +88,7 @@ const menuItems = [
     desc: "Tropical mango swirled into our signature matcha base",
     price: "€5.00",
     emoji: "🥭",
+    image: mangoMatcha,
     badge: "Limited",
     badgeColor: "bg-orange-100 text-orange-700",
   },
@@ -121,34 +138,46 @@ export default function Menu() {
           {filtered.map((item, i) => (
             <div
               key={i}
-              className="bg-white rounded-2xl p-5 border border-green-100 shadow-sm card-hover flex flex-col"
+              className="bg-white rounded-2xl border border-green-100 shadow-sm card-hover flex flex-col overflow-hidden"
             >
-              {/* Emoji Visual */}
-              <div className="w-full aspect-square rounded-xl bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center text-5xl mb-4 border border-green-100">
-                {item.emoji}
+              {/* Drink Image */}
+              <div className="w-full aspect-square bg-gradient-to-br from-green-50 to-green-100 overflow-hidden relative">
+                {item.image ? (
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center text-5xl">
+                    {item.emoji}
+                  </div>
+                )}
               </div>
 
-              {/* Badge */}
-              {item.badge && (
-                <span
-                  className={`inline-block self-start px-2.5 py-0.5 rounded-full text-xs font-semibold mb-2 ${item.badgeColor}`}
-                >
-                  {item.badge}
-                </span>
-              )}
+              <div className="p-5 flex flex-col flex-1">
+                {/* Badge */}
+                {item.badge && (
+                  <span
+                    className={`inline-block self-start px-2.5 py-0.5 rounded-full text-xs font-semibold mb-2 ${item.badgeColor}`}
+                  >
+                    {item.badge}
+                  </span>
+                )}
 
-              {/* Content */}
-              <h3 className="text-green-900 font-bold text-base mb-1.5">{item.name}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed flex-1 mb-3">
-                {item.desc}
-              </p>
+                {/* Content */}
+                <h3 className="text-green-900 font-bold text-base mb-1.5">{item.name}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed flex-1 mb-3">
+                  {item.desc}
+                </p>
 
-              {/* Price */}
-              <div className="flex items-center justify-between">
-                <span className="text-green-700 font-bold text-lg">{item.price}</span>
-                <span className="text-xs text-muted-foreground bg-green-50 px-2 py-1 rounded-full border border-green-100">
-                  {item.category}
-                </span>
+                {/* Price */}
+                <div className="flex items-center justify-between">
+                  <span className="text-green-700 font-bold text-lg">{item.price}</span>
+                  <span className="text-xs text-muted-foreground bg-green-50 px-2 py-1 rounded-full border border-green-100">
+                    {item.category}
+                  </span>
+                </div>
               </div>
             </div>
           ))}
