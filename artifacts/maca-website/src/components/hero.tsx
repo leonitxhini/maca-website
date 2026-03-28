@@ -43,79 +43,11 @@ export default function Hero() {
           className="w-full h-full object-cover object-center"
         />
 
-        {/* Layer 1: Dark base tint */}
-        <div className="absolute inset-0 bg-gradient-to-b from-green-950/60 via-green-900/40 to-green-950/70" />
-
-        {/* Layer 2: Radial vignette */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse 75% 70% at 50% 45%, transparent 20%, rgba(5, 20, 10, 0.65) 100%)",
-          }}
-        />
-
-        {/* Layer 3: Directional fade */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(5, 18, 10, 0.5) 0%, transparent 30%, transparent 60%, rgba(3, 14, 8, 0.65) 100%)",
-          }}
-        />
+        {/* Subtle dark overlay so text stays readable */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/25 to-black/55" />
       </div>
 
       {/* Large logo watermark — slowly rotates behind everything */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-        {/* Outer glow ring */}
-        <div
-          className="absolute rounded-full hero-logo-pulse"
-          style={{
-            width: 520,
-            height: 520,
-            background:
-              "radial-gradient(circle, rgba(82,183,136,0.18) 0%, rgba(52,144,100,0.08) 50%, transparent 75%)",
-          }}
-        />
-        {/* Second softer glow */}
-        <div
-          className="absolute rounded-full"
-          style={{
-            width: 700,
-            height: 700,
-            background:
-              "radial-gradient(circle, rgba(149,213,178,0.07) 0%, transparent 65%)",
-          }}
-        />
-        {/* The big watermark logo itself */}
-        <img
-          src="/logo.png"
-          alt=""
-          aria-hidden="true"
-          className="absolute rounded-full hero-logo-spin"
-          style={{
-            width: 400,
-            height: 400,
-            opacity: 0.07,
-            filter: "blur(1px) brightness(1.4) saturate(0.6)",
-            objectFit: "cover",
-          }}
-        />
-        {/* Sharp inner version at lower opacity for definition */}
-        <img
-          src="/logo.png"
-          alt=""
-          aria-hidden="true"
-          className="absolute rounded-full hero-logo-spin"
-          style={{
-            width: 300,
-            height: 300,
-            opacity: 0.05,
-            filter: "brightness(1.8) saturate(0)",
-            objectFit: "cover",
-          }}
-        />
-      </div>
 
       {/* Grain texture overlay */}
       <div className="absolute inset-0 pointer-events-none hero-grain" />
@@ -165,15 +97,6 @@ export default function Hero() {
 
       {/* Main content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        {/* Logo */}
-        <div className="flex justify-center mb-6">
-          <img
-            src="/logo.png"
-            alt="Maça Logo"
-            className="w-20 h-20 rounded-full object-cover shadow-2xl border-4 border-white/20 animate-float"
-          />
-        </div>
-
         {/* Badge */}
         <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/20 text-white text-sm px-4 py-2 rounded-full mb-6">
           <Sparkles size={14} className="text-yellow-300" />
