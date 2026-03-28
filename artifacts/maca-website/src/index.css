@@ -323,6 +323,64 @@ html {
   box-shadow: 0 20px 40px rgba(45, 106, 79, 0.15);
 }
 
+/* ===== Steam Wisp Animation ===== */
+@keyframes steamRise {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scaleX(1);
+  }
+  15% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.6;
+    transform: translateY(-18px) scaleX(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-32px) scaleX(0.8);
+  }
+}
+
+.steam-wisp {
+  animation: steamRise 2.4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.steam-wisp-1 { animation-delay: 0s; }
+.steam-wisp-2 { animation-delay: 0.7s; }
+.steam-wisp-3 { animation-delay: 1.4s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .steam-wisp { animation: none; opacity: 0; }
+}
+
+/* ===== Enhanced matcha leaf particles ===== */
+@keyframes leafDrift {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg) scale(1);
+    opacity: 0;
+  }
+  8% { opacity: 1; }
+  50% {
+    transform: translateY(-50vh) translateX(18px) rotate(120deg) scale(0.85);
+  }
+  85% { opacity: 0.6; }
+  100% {
+    transform: translateY(-105vh) translateX(-12px) rotate(240deg) scale(0.4);
+    opacity: 0;
+  }
+}
+
+.hero-leaf-particle {
+  animation: leafDrift linear infinite;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-leaf-particle { animation: none; opacity: 0; }
+}
+
 @layer utilities {
   input[type="search"]::-webkit-search-cancel-button {
     @apply hidden;

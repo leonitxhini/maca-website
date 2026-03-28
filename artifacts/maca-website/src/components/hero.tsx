@@ -1,19 +1,35 @@
 import { ArrowDown, MapPin, Sparkles } from "lucide-react";
 
-export default function Hero() {
-  const particles = [
-    { size: 6, left: "8%", delay: "0s", duration: "14s", opacity: 0.35 },
-    { size: 4, left: "18%", delay: "2.5s", duration: "18s", opacity: 0.25 },
-    { size: 8, left: "27%", delay: "5s", duration: "16s", opacity: 0.3 },
-    { size: 5, left: "38%", delay: "1s", duration: "20s", opacity: 0.2 },
-    { size: 7, left: "48%", delay: "7s", duration: "13s", opacity: 0.28 },
-    { size: 3, left: "57%", delay: "3.5s", duration: "17s", opacity: 0.22 },
-    { size: 9, left: "66%", delay: "9s", duration: "15s", opacity: 0.3 },
-    { size: 5, left: "74%", delay: "0.5s", duration: "19s", opacity: 0.25 },
-    { size: 4, left: "83%", delay: "4s", duration: "12s", opacity: 0.32 },
-    { size: 6, left: "91%", delay: "6s", duration: "16s", opacity: 0.2 },
-  ];
+const leafParticles = [
+  { size: 7, left: "5%", delay: "0s", duration: "14s", opacity: 0.45 },
+  { size: 5, left: "14%", delay: "2.5s", duration: "18s", opacity: 0.35 },
+  { size: 9, left: "23%", delay: "5s", duration: "16s", opacity: 0.4 },
+  { size: 6, left: "33%", delay: "1s", duration: "20s", opacity: 0.3 },
+  { size: 8, left: "44%", delay: "7s", duration: "13s", opacity: 0.38 },
+  { size: 4, left: "53%", delay: "3.5s", duration: "17s", opacity: 0.32 },
+  { size: 10, left: "63%", delay: "9s", duration: "15s", opacity: 0.4 },
+  { size: 6, left: "72%", delay: "0.5s", duration: "19s", opacity: 0.35 },
+  { size: 5, left: "81%", delay: "4s", duration: "12s", opacity: 0.42 },
+  { size: 7, left: "90%", delay: "6s", duration: "16s", opacity: 0.3 },
+  { size: 4, left: "9%", delay: "11s", duration: "21s", opacity: 0.28 },
+  { size: 8, left: "58%", delay: "8s", duration: "14s", opacity: 0.35 },
+];
 
+function LeafShape({ size, color }: { size: number; color: string }) {
+  return (
+    <svg
+      width={size}
+      height={size * 1.5}
+      viewBox="0 0 10 16"
+      fill={color}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M5 0 C9 4, 10 9, 5 16 C0 9, 1 4, 5 0Z" />
+    </svg>
+  );
+}
+
+export default function Hero() {
   return (
     <section
       id="home"
@@ -128,25 +144,22 @@ export default function Hero() {
         />
       </div>
 
-      {/* Floating bokeh particles */}
+      {/* Floating matcha leaf particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {particles.map((p, i) => (
+        {leafParticles.map((p, i) => (
           <div
             key={i}
-            className="absolute rounded-full hero-particle"
+            className="absolute hero-leaf-particle"
             style={{
-              width: p.size,
-              height: p.size,
               left: p.left,
-              bottom: "-10px",
+              bottom: "-12px",
               opacity: p.opacity,
-              background:
-                "radial-gradient(circle, rgba(149,213,178,0.9) 0%, rgba(82,183,136,0.4) 50%, transparent 100%)",
               animationDelay: p.delay,
               animationDuration: p.duration,
-              boxShadow: `0 0 ${p.size * 2}px rgba(149, 213, 178, 0.5)`,
             }}
-          />
+          >
+            <LeafShape size={p.size} color="rgba(149,213,178,0.85)" />
+          </div>
         ))}
       </div>
 

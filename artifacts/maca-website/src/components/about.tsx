@@ -1,4 +1,21 @@
 import { Leaf, Heart, Star } from "lucide-react";
+import ScrollReveal from "@/components/scroll-reveal";
+import { useCountUp } from "@/hooks/use-count-up";
+
+function StatBadge({ value, suffix, label }: { value: number; suffix?: string; label: string }) {
+  const { ref, count } = useCountUp(value, 1400);
+  return (
+    <div className="text-center px-4 py-3 rounded-2xl bg-green-50 border border-green-100">
+      <span
+        ref={ref as React.RefObject<HTMLSpanElement>}
+        className="text-3xl font-black text-green-700 block"
+      >
+        {count}{suffix}
+      </span>
+      <span className="text-xs text-green-900/55 mt-0.5 block">{label}</span>
+    </div>
+  );
+}
 
 export default function About() {
   const values = [
@@ -23,77 +40,90 @@ export default function About() {
     <section id="about" className="py-16 px-4 bg-background">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-10">
-          <span className="text-green-600 font-semibold text-sm uppercase tracking-widest">Our Story</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-green-900 mt-3 mb-4">
-            Meet Maça
-          </h2>
-          <p className="text-base md:text-lg text-green-900/60 max-w-xl mx-auto leading-relaxed">
-            Born from a love of matcha and a passion for Prishtina's vibrant café culture, 
-            Maça is where ancient Japanese tea traditions meet modern Kosovo energy.
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-10">
+            <span className="text-green-600 font-semibold text-sm uppercase tracking-widest">Our Story</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-green-900 mt-3 mb-4">
+              Meet Maça
+            </h2>
+            <p className="text-base md:text-lg text-green-900/60 max-w-xl mx-auto leading-relaxed">
+              Born from a love of matcha and a passion for Prishtina's vibrant café culture, 
+              Maça is where ancient Japanese tea traditions meet modern Kosovo energy.
+            </p>
+          </div>
+        </ScrollReveal>
 
         <div className="grid md:grid-cols-2 gap-10 items-center mb-14">
           {/* Text Side */}
-          <div className="space-y-5">
-            <h3 className="text-2xl md:text-3xl font-bold text-green-800">
-              Kosovo loves coffee...<br />
-              <span className="gradient-text">but have you tried matcha?</span>
-            </h3>
-            <p className="text-green-900/60 leading-relaxed max-w-prose">
-              Maça is Kosovo's newest matcha destination, bringing premium quality and creative flavors 
-              to the heart of Prishtina Mall. Whether you're discovering matcha for the first time 
-              or you're a seasoned enthusiast, we have something special for you.
-            </p>
-            <p className="text-green-900/60 leading-relaxed max-w-prose">
-              From classic ceremonial matcha to playful blueberry and vanilla variations, 
-              every sip is designed to delight, energize, and refresh.
-            </p>
-            <div className="flex flex-wrap gap-3 pt-2">
-              {["Matcha Lattes", "Seasonal Specials", "Iced Drinks", "Signature Blends"].map((tag) => (
-                <span
-                  key={tag}
-                  className="px-4 py-1.5 rounded-full bg-green-100 text-green-700 text-sm font-medium border border-green-200"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
+          <ScrollReveal direction="left" delay={50}>
+            <div className="space-y-5">
+              <h3 className="text-2xl md:text-3xl font-bold text-green-800">
+                Kosovo loves coffee...<br />
+                <span className="gradient-text">but have you tried matcha?</span>
+              </h3>
+              <p className="text-green-900/60 leading-relaxed max-w-prose">
+                Maça is Kosovo's newest matcha destination, bringing premium quality and creative flavors 
+                to the heart of Prishtina Mall. Whether you're discovering matcha for the first time 
+                or you're a seasoned enthusiast, we have something special for you.
+              </p>
+              <p className="text-green-900/60 leading-relaxed max-w-prose">
+                From classic ceremonial matcha to playful blueberry and vanilla variations, 
+                every sip is designed to delight, energize, and refresh.
+              </p>
 
-          {/* Real photo */}
-          <div className="relative">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-square max-w-md mx-auto">
-              <img
-                src="/vanilla-matcha.jpg"
-                alt="Maça Vanilla Matcha drink"
-                className="w-full h-full object-cover object-center"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-green-900/50 via-transparent to-transparent" />
-              <div className="absolute bottom-5 left-5 right-5 text-white">
-                <p className="font-bold text-lg drop-shadow">Vanilla Matcha</p>
-                <p className="text-white/80 text-sm">One of our signature blends</p>
+              {/* Animated stat badges */}
+              <div className="grid grid-cols-3 gap-3 pt-2">
+                <StatBadge value={8} suffix="+" label="Menu drinks" />
+                <StatBadge value={100} suffix="%" label="Ceremonial grade" />
+                <StatBadge value={1} label="Iconic location" />
+              </div>
+
+              <div className="flex flex-wrap gap-3 pt-2">
+                {["Matcha Lattes", "Seasonal Specials", "Iced Drinks", "Signature Blends"].map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-4 py-1.5 rounded-full bg-green-100 text-green-700 text-sm font-medium border border-green-200"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-full bg-green-100 -z-10" />
-            <div className="absolute -top-6 -left-6 w-20 h-20 rounded-full bg-green-200 -z-10" />
-          </div>
+          </ScrollReveal>
+
+          {/* Real photo */}
+          <ScrollReveal direction="right" delay={100}>
+            <div className="relative">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-square max-w-md mx-auto">
+                <img
+                  src="/vanilla-matcha.jpg"
+                  alt="Maça Vanilla Matcha drink"
+                  className="w-full h-full object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-green-900/50 via-transparent to-transparent" />
+                <div className="absolute bottom-5 left-5 right-5 text-white">
+                  <p className="font-bold text-lg drop-shadow">Vanilla Matcha</p>
+                  <p className="text-white/80 text-sm">One of our signature blends</p>
+                </div>
+              </div>
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-full bg-green-100 -z-10" />
+              <div className="absolute -top-6 -left-6 w-20 h-20 rounded-full bg-green-200 -z-10" />
+            </div>
+          </ScrollReveal>
         </div>
 
         {/* Values Grid */}
         <div className="grid sm:grid-cols-3 gap-5">
           {values.map((v, i) => (
-            <div
-              key={i}
-              className="p-5 rounded-2xl bg-card border border-card-border shadow-sm card-hover group"
-            >
-              <div className="w-11 h-11 rounded-xl bg-green-50 border border-green-100 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                {v.icon}
+            <ScrollReveal key={i} direction="up" delay={i * 80}>
+              <div className="p-5 rounded-2xl bg-card border border-card-border shadow-sm card-hover group h-full">
+                <div className="w-11 h-11 rounded-xl bg-green-50 border border-green-100 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                  {v.icon}
+                </div>
+                <h4 className="text-base font-bold text-green-900 mb-1.5">{v.title}</h4>
+                <p className="text-green-900/55 text-sm leading-relaxed">{v.desc}</p>
               </div>
-              <h4 className="text-base font-bold text-green-900 mb-1.5">{v.title}</h4>
-              <p className="text-green-900/55 text-sm leading-relaxed">{v.desc}</p>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

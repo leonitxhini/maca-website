@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SteamWisp from "@/components/steam-wisp";
 
 const categories = ["All", "Classic", "Signature", "Iced", "Seasonal"];
 
@@ -11,6 +12,7 @@ const menuItems = [
     image: "/menu/ceremonial-matcha.png",
     badge: "Bestseller",
     badgeColor: "bg-amber-100 text-amber-700",
+    steam: true,
   },
   {
     category: "Classic",
@@ -20,6 +22,7 @@ const menuItems = [
     image: "/menu/matcha-latte.png",
     badge: "Popular",
     badgeColor: "bg-green-100 text-green-700",
+    steam: true,
   },
   {
     category: "Signature",
@@ -29,6 +32,7 @@ const menuItems = [
     image: "/menu/vanilla-matcha.png",
     badge: "Signature",
     badgeColor: "bg-purple-100 text-purple-700",
+    steam: true,
   },
   {
     category: "Signature",
@@ -38,6 +42,7 @@ const menuItems = [
     image: "/menu/blueberry-matcha.png",
     badge: "Signature",
     badgeColor: "bg-purple-100 text-purple-700",
+    steam: false,
   },
   {
     category: "Iced",
@@ -47,6 +52,7 @@ const menuItems = [
     image: "/menu/iced-matcha-latte.png",
     badge: null,
     badgeColor: "",
+    steam: false,
   },
   {
     category: "Iced",
@@ -56,6 +62,7 @@ const menuItems = [
     image: "/menu/matcha-lemonade.png",
     badge: "New",
     badgeColor: "bg-yellow-100 text-yellow-700",
+    steam: false,
   },
   {
     category: "Seasonal",
@@ -65,6 +72,7 @@ const menuItems = [
     image: "/menu/spring-bloom.png",
     badge: "Limited",
     badgeColor: "bg-rose-100 text-rose-700",
+    steam: true,
   },
   {
     category: "Seasonal",
@@ -74,6 +82,7 @@ const menuItems = [
     image: "/menu/mango-matcha.png",
     badge: "Limited",
     badgeColor: "bg-orange-100 text-orange-700",
+    steam: true,
   },
 ];
 
@@ -121,10 +130,11 @@ export default function Menu() {
           {filtered.map((item, i) => (
             <div
               key={i}
-              className="bg-white rounded-2xl border border-green-100 shadow-sm card-hover flex flex-col overflow-hidden group"
+              className="bg-white rounded-2xl border border-green-100 shadow-sm card-hover flex flex-col overflow-visible group"
             >
-              {/* Cup Image */}
-              <div className="relative w-full aspect-square overflow-hidden bg-gradient-to-br from-green-50 to-emerald-50">
+              {/* Cup Image with optional steam */}
+              <div className="relative w-full aspect-square overflow-hidden bg-gradient-to-br from-green-50 to-emerald-50 rounded-t-2xl">
+                {item.steam && <SteamWisp />}
                 <img
                   src={item.image}
                   alt={item.name}

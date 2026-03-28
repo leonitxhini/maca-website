@@ -8,18 +8,27 @@ import Gallery from "@/components/gallery";
 import Reel from "@/components/reel";
 import Location from "@/components/location";
 import Footer from "@/components/footer";
+import CursorGlow from "@/components/cursor-glow";
+import ScrollReveal from "@/components/scroll-reveal";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
+      <CursorGlow />
       <Navbar />
       <Hero />
-      <VideoAd />
+      <ScrollReveal>
+        <VideoAd />
+      </ScrollReveal>
       <About />
-      <Menu />
+      <ScrollReveal>
+        <Menu />
+      </ScrollReveal>
       <WhyMatcha />
       <Gallery />
-      <Reel />
+      <ScrollReveal>
+        <Reel />
+      </ScrollReveal>
       <Location />
       <Footer />
     </div>
