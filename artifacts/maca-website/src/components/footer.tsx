@@ -21,7 +21,12 @@ export default function Footer() {
               <div className="w-10 h-10 rounded-full bg-white/15 border border-white/20 flex items-center justify-center">
                 <span className="text-lg">🍵</span>
               </div>
-              <span className="text-2xl font-black">Maça</span>
+              <span
+                className="text-3xl"
+                style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.1em" }}
+              >
+                MAÇA
+              </span>
             </div>
             <p className="text-white/65 text-sm leading-relaxed mb-5 max-w-xs">
               Premium matcha drinks crafted with care, brought to the heart of Prishtina. 

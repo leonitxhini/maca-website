@@ -40,8 +40,11 @@ export default function Navbar() {
                 alt="Maça Logo"
                 className="w-9 h-9 rounded-full object-cover shadow-md group-hover:scale-105 transition-transform"
               />
-              <span className="text-xl font-bold tracking-tight text-green-900 transition-colors">
-                Maça
+              <span
+                className="text-2xl text-green-900 transition-colors"
+                style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.1em" }}
+              >
+                MAÇA
               </span>
             </a>
 

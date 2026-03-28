@@ -46,15 +46,15 @@ export default function Hero() {
           <Sparkles size={14} className="text-yellow-300" />
         </div>
 
-        {/* Main Heading */}
-        <h1 className="text-6xl md:text-8xl font-black text-white mb-4 leading-none tracking-tight drop-shadow-lg">
-          Maça
+        {/* Main brand name — matches the MAÇA cup branding */}
+        <h1
+          className="text-[9rem] md:text-[13rem] text-white mb-2 leading-none drop-shadow-lg"
+          style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.08em" }}
+        >
+          MAÇA
         </h1>
-        <p className="text-2xl md:text-3xl text-white/90 font-light mb-4">
+        <p className="text-xl md:text-2xl text-white/80 font-light tracking-widest uppercase mb-10">
           Matcha, reimagined.
-        </p>
-        <p className="text-lg text-white/75 mb-10 max-w-xl mx-auto leading-relaxed">
-          Premium Japanese matcha meets Kosovo's coffee culture. Sip something extraordinary at Prishtina Mall — Food Court.
         </p>
 
         {/* CTAs */}
@@ -75,9 +75,9 @@ export default function Hero() {
         </div>
 
         {/* Opening Date */}
-        <div className="mt-12 inline-flex items-center gap-2 text-white/60 text-sm">
-          <span>Grand Opening:</span>
-          <span className="text-white font-semibold">April 8th, 2026</span>
+        <div className="mt-12 inline-flex items-center gap-2 text-white/60 text-sm tracking-wider">
+          <span>GRAND OPENING ·</span>
+          <span className="text-white font-semibold">APRIL 8TH, 2026</span>
         </div>
       </div>
 
