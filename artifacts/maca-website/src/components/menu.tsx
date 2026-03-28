@@ -130,16 +130,6 @@ export default function Menu() {
                   alt={item.name}
                   className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                 />
-                {/* Correct MAÇA branding overlay */}
-                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-1.5 bg-white/85 backdrop-blur-sm rounded-full px-3 py-1 shadow-md">
-                  <img src="/logo.png" alt="Maça" className="w-4 h-4 rounded-full object-cover" />
-                  <span
-                    className="text-green-900 text-sm leading-none"
-                    style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.12em" }}
-                  >
-                    MAÇA
-                  </span>
-                </div>
               </div>
 
               <div className="p-5 flex flex-col flex-1">
